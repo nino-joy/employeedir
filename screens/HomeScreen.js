@@ -3,6 +3,7 @@ import {StyleSheet, Text, View, FlatList, TouchableOpacity} from 'react-native';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import ListItem from '../components/ListItem';
+import SearchBar from '../components/SearchBar';
 
 const BASE_URL = 'http://www.mocky.io/v2/5d565297300000680030a986';
 
@@ -32,6 +33,7 @@ const HomeScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Text style={styles.heading}>Employee Directory</Text>
+      <SearchBar query />
       <FlatList
         data={data}
         showsVerticalScrollIndicator={false}

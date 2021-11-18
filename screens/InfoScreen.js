@@ -6,12 +6,19 @@ const InfoScreen = ({route}) => {
   return (
     <View style={styles.container}>
       <View style={{alignItems: 'center'}}>
-        <Image
-          style={styles.image}
-          source={{
-            uri: item.profile_image,
-          }}
-        />
+        {item.profile_image ? (
+          <Image
+            style={styles.image}
+            source={{
+              uri: item.profile_image,
+            }}
+          />
+        ) : (
+          <Image
+            style={styles.image}
+            source={require('../components/avatarplaceholder.png')}
+          />
+        )}
         <Text
           style={{
             fontSize: 28,
