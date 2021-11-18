@@ -2,17 +2,12 @@ import React, {useEffect, useState} from 'react';
 import {StyleSheet, Text, View, FlatList} from 'react-native';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import ListItem from './components/ListItem';
 
 const BASE_URL = 'http://www.mocky.io/v2/5d565297300000680030a986';
 
 const App = () => {
   const [data, setData] = useState([]);
-
-  const renderItem = ({item}) => (
-    <View>
-      <Text>{item.name}</Text>
-    </View>
-  );
 
   const fetchData = async () => {
     try {
@@ -40,9 +35,9 @@ const App = () => {
       <FlatList
         data={data}
         contentContainerStyle={{
-          marginTop: 20,
+          marginTop: 30,
         }}
-        renderItem={renderItem}
+        renderItem={ListItem}
         keyExtractor={item => item.id}
       />
     </View>
