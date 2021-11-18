@@ -1,29 +1,27 @@
 import React from 'react';
 import {StyleSheet, Text, View, Image} from 'react-native';
 
-const ListItem = ({item}) => {
+const ListItem = ({name, imageURL, company}) => {
   return (
     <View style={styles.container}>
       <Image
         style={styles.image}
         source={{
-          uri: item.profile_image,
+          uri: imageURL,
         }}
       />
       <View style={styles.content}>
-        <Text style={{fontWeight: '700', fontSize: 15}}>{item.name}</Text>
-        {/* <Text>{item.company.name}</Text> */}
+        <Text style={{fontWeight: '700', fontSize: 15}}>{name}</Text>
+        <Text>Company Name Placeholder</Text>
       </View>
     </View>
   );
 };
 
-export default ListItem;
-
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    marginBottom: 15,
+    marginBottom: 25,
   },
   image: {
     borderRadius: 80 / 2,
@@ -36,3 +34,5 @@ const styles = StyleSheet.create({
     marginLeft: 15,
   },
 });
+
+export default ListItem;
