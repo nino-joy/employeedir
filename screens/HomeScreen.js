@@ -25,10 +25,6 @@ const HomeScreen = ({navigation}) => {
     }
   };
 
-  const onPress = () => {
-    navigation.navigate('Info');
-  };
-
   useEffect(() => {
     fetchData();
   }, []);
@@ -43,7 +39,7 @@ const HomeScreen = ({navigation}) => {
         renderItem={({item}) => (
           <TouchableOpacity
             key={item.id}
-            onPress={() => navigation.navigate('Info', {id: item.id})}>
+            onPress={() => navigation.navigate('Info', {item: item})}>
             <ListItem
               name={item.name}
               imageURL={item.profile_image}
@@ -62,7 +58,7 @@ export default HomeScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
+    margin: 20,
   },
   heading: {
     fontSize: 30,

@@ -12,7 +12,7 @@ const ListItem = ({name, imageURL, company}) => {
       />
       <View style={styles.content}>
         <Text style={{fontWeight: '700', fontSize: 15}}>{name}</Text>
-        <Text>Company Name Placeholder</Text>
+        {company && <Text>{company.name}</Text>}
       </View>
     </View>
   );
