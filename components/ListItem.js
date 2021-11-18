@@ -4,12 +4,20 @@ import {StyleSheet, Text, View, Image} from 'react-native';
 const ListItem = ({name, imageURL, company}) => {
   return (
     <View style={styles.container}>
-      <Image
-        style={styles.image}
-        source={{
-          uri: imageURL,
-        }}
-      />
+      {imageURL ? (
+        <Image
+          style={styles.image}
+          source={{
+            uri: imageURL,
+          }}
+        />
+      ) : (
+        <Image
+          style={styles.image}
+          source={require('./avatarplaceholder.png')}
+        />
+      )}
+
       <View style={styles.content}>
         <Text style={{fontWeight: '700', fontSize: 15}}>{name}</Text>
         {company && <Text>{company.name}</Text>}
